@@ -6,7 +6,13 @@
         "btn_signin_title":"Sign In",
         "menu_signin_btn_title":"Signin",
         "menu_signin_sub_title":"New Customer",
-        "menu_signin_register_text":"Start Here"
+        "menu_signin_register_text":"Start Here",
+        "product_category":{
+            "all":"All",
+            "smartphone":"SmartPhone",
+            "primary_deals":"Primary Deals",
+            "books":"Books"
+        }
 
     }
 }

@@ -6,7 +6,13 @@
         "btn_signin_title":"سائن ان",
         "menu_signin_btn_title":"سائن ان",
         "menu_signin_sub_title":"نیا گاہک",
-        "menu_signin_register_text":"یہاں سے شروع کرو"
+        "menu_signin_register_text":"یہاں سے شروع کرو",
+        "product_category":{
+            "all":"سب",
+            "smartphone":"اسمارٹ فون",
+            "primary_deals":"بنیادی ڈیلز",
+            "books":"کتابیں"
+        }
 
     }
 }

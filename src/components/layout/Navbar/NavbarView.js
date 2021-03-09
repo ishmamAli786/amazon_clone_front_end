@@ -33,23 +33,25 @@ function NavbarView(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {/*-Search Bar Start*/}
-                    <form className="from-inline px-lg-5" noValidate method="get">
+                    <form className="from-inline px-lg-5" onSubmit={props.handleSearch} noValidate method="get">
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" name="btnCategory" type="button" id="btnCategorydropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        All
+                                    <button className={`btn btn-secondary dropdown-toggle ${rtl}`} name="btnCategory" type="button" id="btnCategorydropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {t(props.productCategory[props.selectedCat])}
                   </button>
                                     <div className="dropdown-menu" aria-labelledby="btnCategorydropDownMenu">
-                                        <a className="dropdown-item" href="#">All</a>
-                                        <a className="dropdown-item" href="#">Smart Phone</a>
-                                        <a className="dropdown-item" href="#">Primary Deals</a>
-                                        <a className="dropdown-item" href="#">Books</a>
+                                        <a className={`dropdown-item ${rtl}`} href="#" onClick={(e)=>{props.handleCatChange(e,0)}}>{t('navbar.product_category.all')}</a>
+                                        <a className={`dropdown-item ${rtl}`} href="#" onClick={(e)=>{props.handleCatChange(e,1)}}>{t('navbar.product_category.smartphone')}</a>
+                                        <a className={`dropdown-item ${rtl}`} href="#" onClick={(e)=>{props.handleCatChange(e,2)}}>{t('navbar.product_category.primary_deals')}</a>
+                                        <a className={`dropdown-item ${rtl}`} href="#" onClick={(e)=>{props.handleCatChange(e,3)}}>{t('navbar.product_category.books')}</a>
                                     </div>
                                 </div>
                             </div>
-                            <input type="text" name="query" id="query" size={50} className={`form-control ${rtl}`} />
-                            <input type="text" name="category" id="category" defaultValue="book" hidden />
+                            <input type="text" name="query" id="query" size={50} className={`form-control ${rtl}`}
+                            onChange={props.handleQueryChange} value={props.query}
+                             />
+                            <input type="text" name="category" id="category" defaultValue={props.selectedCat} hidden />
                             <div className="input-group-append">
                                 <button type="submit" className="btn btn-warning"><i className="fas fa-search" /></button>
                             </div>
