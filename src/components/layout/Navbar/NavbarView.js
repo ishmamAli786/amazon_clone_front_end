@@ -1,8 +1,7 @@
 import React from 'react'
 
 function NavbarView(props) {
-    const {t,i18n}=props;
-    console.log(t('navbar.sidebar_title'));
+    const {t,rtl}=props;
     return (
         <>
             {/*-NavBar Starts*/}
@@ -12,15 +11,15 @@ function NavbarView(props) {
                 <div className="drawer drawer-left slide" tabIndex={-1} role="dialog" aria-labelledby="drawer-demo-title" aria-hidden="true" id="amazonDrawer">
                     <div className="drawer-content drawer-content-scrollable" role="document">
                         <div className="drawer-header bg-dark text-white">
-                            <h4 className="drawer-title mx-auto" id="drawer-demo-title">
+                            <h4 className={`drawer-title mx-auto ${rtl}`} id="drawer-demo-title">
                                 <i className="fas fa-user-circle" />
-                Hello,Sign in
+                {t('navbar.sidebar_title')}
               </h4>
                         </div>
                         <div className="drawer-body">
-                            <h6 className="text-muted">Help &amp; Settings</h6>
-                            <a href="your_account.html" className="btn btn-outline-success my-2 btn-sm">Your Account</a>
-                            <a href="login.html" className="btn btn-outline-warning my-2 btn-sm">Sign in</a>
+                            <h6 className={`text-muted text-uppercase ${rtl}`}>{t('navbar.sidebar_help_title')}</h6>
+                            <a href="your_account.html" className={`btn btn-outline-success my-2 btn-sm ${rtl}`}>{t('navbar.btn_account_title')}</a>
+                            <a href="login.html" className={`btn btn-outline-warning my-2 btn-sm ${rtl}`}>{t('navbar.btn_signin_title')}</a>
                         </div>
                         <div className="drawer-footer"><button type="button" className="btn btn-outline-danger btn-block  close" data-dismiss="drawer" aria-label="Close">
                             <i className="fas fa-2x fa-times" />
@@ -49,7 +48,7 @@ function NavbarView(props) {
                                     </div>
                                 </div>
                             </div>
-                            <input type="text" name="query" id="query" size={50} className="form-control" />
+                            <input type="text" name="query" id="query" size={50} className={`form-control ${rtl}`} />
                             <input type="text" name="category" id="category" defaultValue="book" hidden />
                             <div className="input-group-append">
                                 <button type="submit" className="btn btn-warning"><i className="fas fa-search" /></button>
@@ -67,28 +66,28 @@ function NavbarView(props) {
                             <div className="dropdown-menu" aria-labelledby="prefLanguageDropdown">
                                 <form className="p-3">
                                     <div className="form-check mb-2">
-                                        <input className="form-check-input" type="radio" name="prefLang" id="engLang" defaultValue="english" defaultChecked />
+                                        <input className="form-check-input" type="radio" name="prefLang" id="engLang" defaultValue="en" onClick={props.handleChangeLang} defaultChecked={props.prefLang=="en"?true:false} />
                                         <label className="form-check-label" htmlFor="engLang">
                                             <img src="assets/img/uk.png" alt="uk" width={50} height={30} />
                                         </label>
                                     </div>
                                     <div className="dropdown-divider" />
                                     <div className="form-check  mb-2">
-                                        <input className="form-check-input" type="radio" name="prefLang" id="hindiLang" defaultValue="hindi" defaultChecked />
+                                        <input className="form-check-input" type="radio" name="prefLang" id="hindiLang" defaultValue="in" onClick={props.handleChangeLang} defaultChecked={props.prefLang=="in"?true:false} />
                                         <label className="form-check-label" htmlFor="hindiLang">
                                             <img src="assets/img/india.webp" margin-top="10px" alt="india" width={50} height={30} />
                                         </label>
                                     </div>
                                     <div className="dropdown-divider" />
                                     <div className="form-check  mb-2">
-                                        <input className="form-check-input" type="radio" name="prefLang" id="urduLang" defaultValue="urdu" defaultChecked />
+                                        <input className="form-check-input" type="radio" name="prefLang" id="urduLang" defaultValue="pk" onClick={props.handleChangeLang} defaultChecked={props.prefLang=="pk"?true:false} />
                                         <label className="form-check-label" htmlFor="urduLang">
                                             <img src="assets/img/pak.jpg" margin-top="10px" alt="pak" width={50} height={30} />
                                         </label>
                                     </div>
                                     <div className="dropdown-divider" />
                                     <div className="form-check ">
-                                        <input className="form-check-input" type="radio" name="prefLang" id="banglaLang" defaultValue="bangla" defaultChecked />
+                                        <input className="form-check-input" type="radio" name="prefLang" id="banglaLang" defaultValue="bd" onClick={props.handleChangeLang} defaultChecked={props.prefLang=="bd"?true:false} />
                                         <label className="form-check-label" htmlFor="banglaLang">
                                             <img src="assets/img/bangla.png" margin-top="10px" alt="bangla" width={50} height={30} />
                                         </label>
@@ -107,8 +106,8 @@ function NavbarView(props) {
                             <div className="dropdown-divider" />
                             <div className="dropdown-menu px-3" aria-labelledby="userAccount">
                                 <div className="d-flex row justify-content-center">
-                                    <a href="#" className="btn btn-warning w-75 btn-sm font-weight-bold">Signin</a>
-                                    <small className="text-muted">New Customer?<a href="register.html">Start Here.</a></small>
+                                    <a href="#" className={`btn btn-warning w-75 btn-sm font-weight-bold ${rtl}`}>{t('navbar.menu_signin_btn_title')}</a>
+                                    <small className={`text-muted ${rtl}`}>{t('navbar.menu_signin_sub_title')}?<a href="register.html">{t('navbar.menu_signin_register_text')}</a></small>
                                 </div>
                             </div>
                         </li>

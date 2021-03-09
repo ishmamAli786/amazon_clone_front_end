@@ -7,13 +7,13 @@ function ImageSlider() {
             <div id="amazonImageSlider" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <a href="http://www.google.com"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
+                        <a href="#"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
                     </div>
                     <div className="carousel-item">
-                        <a href="http://www.google.com"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
+                        <a href="#"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
                     </div>
                     <div className="carousel-item">
-                        <a href="http://www.google.com"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
+                        <a href="#"><img src="assets/img/slider/img2.jpg" className="d-block w-100" alt="image" width={150} height={400} /></a>
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#amazonImageSlider" role="button" data-slide="prev">
