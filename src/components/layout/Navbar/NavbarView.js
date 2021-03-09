@@ -4,7 +4,7 @@ function NavbarView() {
     return (
         <>
             {/*-NavBar Starts*/}
-            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <nav id="pageTop" className="navbar navbar-expand-md navbar-dark bg-dark">
                 {/*-Drawer Start*/}
                 <button className="btn btn-outline-light" data-toggle="drawer" data-target="#amazonDrawer"><i className="fas  fa-sliders-h" /></button>
                 <div className="drawer drawer-left slide" tabIndex={-1} role="dialog" aria-labelledby="drawer-demo-title" aria-hidden="true" id="amazonDrawer">
